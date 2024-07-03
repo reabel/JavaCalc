@@ -1,14 +1,22 @@
+package com.reabelx.JavaCalc;
+
+import java.awt.Dimension;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
-
+import javax.swing.JTextPane;
 public class MigSample
 {   
     public static void main (String [] args)
     {
         JFrame frame = new JFrame();
 
+        // Create a text pane
+        JTextPane textPane = new JTextPane();
+        textPane.setText("This is a text pane");
+        textPane.setPreferredSize(new Dimension(200, 200));
         // create radio buttons
         JRadioButton radio1 = new JRadioButton("1");
         JRadioButton radio2 = new JRadioButton("2");
@@ -43,6 +51,7 @@ public class MigSample
         // create the main contentPane
         //JPanel contentPane = new JPanel(new MigLayout("filly")); // again, we want to fill the vertical space so the 2 panels will have the same height
         JPanel contentPane = new JPanel();
+        contentPane.add(textPane, "growy");
         contentPane.add(radioPanel);
         contentPane.add(buttonPanel, "growy");
 
